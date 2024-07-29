@@ -11,7 +11,7 @@ client.on("ready", () => {
 })
 
 client.on("interactionCreate", async (interaction) => {
-	if(interaction.isCommand()) {command_management(interaction, interaction.user.id)}
+	if(interaction.isCommand()) {command_management(interaction, interaction.user.id, process.env.SECURITYMODE)}
 })
 
 client.login(process.env.token)

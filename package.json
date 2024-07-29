@@ -7,6 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "yumekko54",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your_username/repo_name.git"
+  },
   "license": "ISC",
   "dependencies": {
     "discord.js": "^14.15.3",
