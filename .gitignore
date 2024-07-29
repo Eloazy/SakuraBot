@@ -1,0 +1,4 @@
+/node_modules
+/slash-deploys
+.env
+/images
