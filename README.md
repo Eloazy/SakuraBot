@@ -25,7 +25,7 @@ there will be an update to fix this
 
 ## update security
 
-> ![WARNING]
-> while sakura is in updates NOTE that the security bypass will be enabled, you can see this using the `/help` command
+> [!WARNING]
+> While sakura is in updates NOTE that the security bypass will be enabled, you can see this using the `/help` command
 
 the bypass disables commands from staff level to higher that could create ban problems until the update is finished and the system is verified, thus minimizing problems
