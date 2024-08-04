@@ -1,0 +1,15 @@
+const Owner = require("../IdStorage/id_storage.js")
+module.exports = async function(interaction) {
+	console.log(interaction)
+	interaction.reply("debbug prompt:")
+	interaction.channel.send("------</>------// [REPORT] - SakuraBOT - [REPORT] //------</>------")
+	interaction.channel.send("Owner: <@874115618746552330>")
+	await interaction.channel.send(`BOT ID: ${interaction.applicationId}`)
+	await interaction.channel.send(`SERVER ID: ${interaction.guildId}`)
+	await interaction.channel.send(`Chat ID: ${interaction.channelId}`)
+	await interaction.channel.send(`User ID: ${interaction.user.id}, globalName: ${interaction.user.globalName}`)
+	interaction.channel.send("Compatible to GlobalServer: FALSE")
+	interaction.channel.send("Interaction tree printed in Prompt")
+	interaction.channel.send("GIT: [GIT](https://github.com/Eloazy/SakuraBot)")
+	interaction.channel.send("------</>------// [REPORT] - SakuraBOT - [REPORT] //------</>------")
+}
