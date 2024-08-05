@@ -4,16 +4,7 @@ const shift = {
 	roles:['1269714287363096657', '1269714330790920356'],
 	LOARole:"1269714439054033012"
 }
-
-async function addRole(interaction, target, newbie) {
-	for(var i = 0; i<shift.roles.length; i++) {
-		console.log(shift.roles[i])
-		target.roles.add(interaciont.guild.getRole(shift.roles[i]));
-	}
-	if(newbie == true) {
-		target.roles.add(shift.LOARole)
-	}
-}
+// provisional solution, not universal, integrate into id_storage
 
 module.exports = async function(interaction) {
 	const target = interaction.options.getUser('user')
