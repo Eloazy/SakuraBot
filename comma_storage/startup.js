@@ -31,15 +31,15 @@ module.exports = async function(interaction) {
 		------------------ [result received] ------------------
 	`)
 	await interaction.channel.send('## critical ERROR')
-	if(db(interaction.guildId, "shiftG") !== default_error_code) {await interaction.channel.send(`> Shift Hub recognized`)}
+	if(db(interaction.guildId, "shiftG") !== default_error_code) {await interaction.channel.send(`> No error found in Shift Hub`)}
 	else {await interaction.channel.send(`> Shift Hub FAULT | ERROR 404`)}
 	if(autorole[0] == default_error_code || autorole[1] == default_error_code ) {await interaction.channel.send(`> AutoRole FAULT | ERROR 404`)}
-	else {await interaction.channel.send(`> AutoRole recognized`)}
+	else {await interaction.channel.send(`> No error found in AutoRole`)}
 	
 	await interaction.channel.send('## WARNING')
-	if(db(interaction.guildId, "admin") !== default_error_code) {await interaction.channel.send(`> admin found`)}
+	if(db(interaction.guildId, "admin") !== default_error_code) {await interaction.channel.send(`> No error found in admin`)}
 	else {await interaction.channel.send(`> admin FAULT | ERROR 404 | role not found`)}
 	if(staffs[0] == default_error_code || staffs[1] == default_error_code ) {await interaction.channel.send(`> Staffs_ID FAULT | ERROR 404 | 1 or 2 slots do not have users attached`)}
-	else {await interaction.channel.send(`> staffs recognized`)}
+	else {await interaction.channel.send(`> No error found in staffs`)}
 	await interaction.channel.send(`----------------------------------------------------------`)
 }
