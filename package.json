@@ -1,0 +1,20 @@
+{
+  "name": "sakurabot",
+  "version": "2.0.0",
+  "description": "A BOT to help faction management on Mystic Magic game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yumekko54",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your_username/repo_name.git"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.4"
+  }
+}
