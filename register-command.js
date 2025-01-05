@@ -144,8 +144,12 @@ const commands = [
 				"required":true
 			}
 		]
+	},
+	{
+		name: 'apply',
+		description: 'make your apply on Lunar Covenant'
 	}
-];
+]
 
 const rest = new REST({ version: '10' }).setToken(token);
 
