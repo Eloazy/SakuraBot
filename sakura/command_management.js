@@ -14,11 +14,13 @@ const invite = require("./commandsStorage/invite.js")
 const startShift = require("./commandsStorage/startShift.js")
 const endShift = require("./commandsStorage/endShift.js")
 const maninho = require("./commandsStorage/maninho.js")
+const apply = require("./commandsStorage/apply.js")
 
 module.exports = async function(interaction) {
 	
 	if(interaction.commandName === "ping" && await validation(interaction) >= 0) {ping(interaction)}
 	else if(interaction.commandName === "invite" && await validation(interaction) >= 0) {invite(interaction)}
+	else if(interaction.commandName === "apply" && await validation(interaction) >= 0) {apply(interaction)}
 	else if(interaction.commandName === "start-shift" && await validation(interaction) >= 0) {startShift(interaction)}
 	else if(interaction.commandName === "end-shift" && await validation(interaction) >= 0) {endShift(interaction)}
 	else if(interaction.commandName === "annoucement" && await validation(interaction) || interaction.commandName === "annoucement" && interaction.user.id == "1028082823669751868" ) {annoucement(interaction)}
@@ -26,7 +28,7 @@ module.exports = async function(interaction) {
 	else if(interaction.commandName === "new-member" && await validation(interaction) >= 1) {new_member(interaction)}
 	else if(interaction.commandName === "setup" && await validation(interaction) >= 2) {setup(interaction)}
 	else if(interaction.commandName === "ban" && await validation(interaction) >= 2) {ban(interaction)}
-	else if(interaction.commandName === "shutdown" && await validation(interaction) == 3) {shutdown(interaction)}
+	else if(interaction.commandName === "shutdown" && await validation(interaction) == 3) {shutdown(interaction)
 	else if(interaction.commandName === "maninho" && interaction.user.id == "1081671777119391745") {maninho(interaction)}
 	else {return 0}
 }
