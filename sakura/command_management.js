@@ -28,7 +28,7 @@ module.exports = async function(interaction) {
 	else if(interaction.commandName === "new-member" && await validation(interaction) >= 1) {new_member(interaction)}
 	else if(interaction.commandName === "setup" && await validation(interaction) >= 2) {setup(interaction)}
 	else if(interaction.commandName === "ban" && await validation(interaction) >= 2) {ban(interaction)}
-	else if(interaction.commandName === "shutdown" && await validation(interaction) == 3) {shutdown(interaction)
+	else if(interaction.commandName === "shutdown" && await validation(interaction) == 3) {shutdown(interaction)}
 	else if(interaction.commandName === "maninho" && interaction.user.id == "1081671777119391745") {maninho(interaction)}
 	else {return 0}
 }
