@@ -3,7 +3,7 @@ module.exports = async function(interaction) {
 
   const modal = new ModalBuilder()
 			.setCustomId('apply')
-			.setTitle('Lunar Apply)
+			.setTitle('Lunar Apply')
   
 		const nameInput = new TextInputBuilder()
 			.setCustomId('nameInput')
