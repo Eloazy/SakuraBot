@@ -14,20 +14,17 @@ module.exports = async function(interaction) {
 			.setCustomId('whyJoin')
 			.setLabel("why you want join on Lunar Covenant")
 			.setStyle(TextInputStyle.Paragraph);
+
+	        const whyChoose = new TextInputBuilder()
+			.setCustomId('whyChoose')
+			.setLabel("Why should we accept you instead of another candidate?")
+			.setStyle(TextInputStyle.Paragraph);
   
 		const firstActionRow = new ActionRowBuilder().addComponents(nameInput);
 		const secondActionRow = new ActionRowBuilder().addComponents(whyJoin);
+                const thirthActionRow = new ActionRowBuilder().addComponents(whyChoose);
   
-		modal.addComponents(firstActionRow, secondActionRow);
+		modal.addComponents(firstActionRow, secondActionRow, thirthActionRow);
   
 		await interaction.showModal(modal);
-
-  const filter = (interaction) => interaction.customId === 'apply'
-  interaction
-  .awaitModalSubmit({ filter, time: 30_000 })
-  .then((modalInteraction) => {
-    const nameInputValue = modalInteraction.fields.getTextInputValue('nameInput')
-    const whyInputValue = modalInteraction.fields.getTextInputValue('whyJoin')
-    modalInteraction.reply('user: ', nameInputValue, '\nWhy: ',whyInputValue)
-  }.catch(err){console.log(err)}
 }
