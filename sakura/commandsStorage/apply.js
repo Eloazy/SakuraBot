@@ -30,18 +30,13 @@ module.exports = async function(interaction) {
 			.setCustomId('levelInput')
 			.setLabel("input your level in-game")
 			.setStyle(TextInputStyle.Short)
-
-	      const indicationInput = new TextInputBuilder()
-			.setCustomId('indicationInput')
-			.setLabel("Did someone recommend you to this faction?")
-			.setStyle(TextInputStyle.Short)
-	                .setPlaceholder('if no, stay blank')
 	
 		const firstActionRow = new ActionRowBuilder().addComponents(nameInput);
 		const secondActionRow = new ActionRowBuilder().addComponents(whyJoin);
-                const fourthActionRow = new ActionRowBuilder().addComponents(killInputs, deathInputs, levelInputs)
-	        const fifthActionRow = new ActionRowBuilder().addComponents(indicationInputs)
-		modal.addComponents(firstActionRow, secondActionRow, fourthActionRow, fifthActionRow);
+                const tirthActionRow = new ActionRowBuilder().addComponents(killInput);
+                const fourthActionRow = new ActionRowBuilder().addComponents(deathInput)
+	        const fifthActionRow = new ActionRowBuilder().addComponents(levelInput)
+		modal.addComponents(firstActionRow, secondActionRow, tirthActionRow, fourthActionRow, fifthActionRow);
   
 		await interaction.showModal(modal);
 }
