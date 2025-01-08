@@ -42,11 +42,13 @@ module.exports = async function(interaction) {
 	const filter = (interaction) => interaction.customId === 'apply'
 
         interaction.awaitModalSubmit({ filter, time: 30_000 }).then((interaction) => {
-		modalInteraction.reply({ content: 'apply submited', ephemeral: true })
-	})
+		embedMaker(modalIteraction, firstActionRow, secondActionRow, tirthActionRow, fourthActionRow, fifthActionRow)
+		.then({
+			modalInteraction.reply({ content: 'apply submited', ephemeral: true })
+		})
 }      
 
-async function(interaction, name, whyJoin, Kills, Deaths, Level) {
+async function embedMaker(interaction, name, whyJoin, Kills, Deaths, Level) {
 	const apply = new EmbedBuilder()
 		.setColor("FFA6C9")
 		.setTitle(`<@${interaction.user.id}> apply`)
@@ -62,5 +64,5 @@ async function(interaction, name, whyJoin, Kills, Deaths, Level) {
 		.setTimestamp()
 		.setFooter({ text: 'SakuraSystem 3.0 - apply' })
 		
-		await interaction.guild.channels.cache.get(channel.id).send({ embeds: [apply] })
+		await interaction.guild.channels.cache.get("1326365936046968856").send({ embeds: [apply] })
 }
