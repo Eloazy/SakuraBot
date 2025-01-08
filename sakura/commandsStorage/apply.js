@@ -70,6 +70,22 @@ async function embedMaker(interaction, name, whyJoin, kill, death, level) {
 		)
 		.setTimestamp()
 		.setFooter({ text: 'SakuraSystem 3.0 - apply' })
-		
+	
+	const approved = new ButtonBuilder()
+			.setCustomId('Approved')
+			.setLabel('approve this apply')
+			.setStyle(ButtonStyle.Sucess);
+	
+	const denied = new ButtonBuilder()
+		.setCustomId('Denied')
+		.setLabel('deny this apply')
+		.setStyle(ButtonStyle.Secondary);
+	
+	const blacklist = new ButtonBuilder()
+			.setCustomId('Blacklist')
+			.setLabel('blacklist this member')
+			.setStyle(ButtonStyle.Danger);
+
+
 		await interaction.guild.channels.cache.get("1326365936046968856").send({ embeds: [apply] })
 }
