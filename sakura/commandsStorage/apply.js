@@ -43,7 +43,7 @@ module.exports = async function(interaction) {
 
         interaction.awaitModalSubmit({ filter, time: 30_000 }).then((interaction) => {
 		embedMaker(modalIteraction, firstActionRow, secondActionRow, tirthActionRow, fourthActionRow, fifthActionRow)
-		.then({
+		.then(response => {
 			modalInteraction.reply({ content: 'apply submited', ephemeral: true })
 		})
 	})
