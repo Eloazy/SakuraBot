@@ -62,10 +62,10 @@ async function embedMaker(interaction, name, whyJoin, kill, death, level) {
 		.setDescription('why join in lunar?\n'+whyJoin)
 		.addFields(
 			{ name: "kills:", value: `${kill}`, inline: true },
-			{ name: "Deaths:", value: `${death}, inline: true },
-			{ name: "Level:", valud: `${level}`, inline: true },
+			{ name: "Deaths:", value: `${death}`, inline: true },
+			{ name: "Level:", value: `${level}`, inline: true },
 			{ name: '\u200B', value: '\u200B' },
-			{ name: "sakura Aval:", value: "unavailable", inline: true }
+			{ name: "sakura Aval:", value: "unavailable", inline: true },
 			{ name: "KD-R", value: "unavailable", inline: true }
 		)
 		.setTimestamp()
