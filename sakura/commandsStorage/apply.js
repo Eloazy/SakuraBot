@@ -51,6 +51,14 @@ async function(interaction, name, whyJoin, Kills, Deaths, Level) {
 		.setColor("FFA6C9")
 		.setTitle(`<@${interaction.user.id}> apply`)
 		.setDescription('why join in lunar?\n'+whyJoin)
+		.addFields(
+			{ name: "kills:", value: Kills, inline: true },
+			{ name: "Deaths:", value: Deaths, inline: true },
+			{ name: "Level:", valud: Level, inline: true },
+			{ name: '\u200B', value: '\u200B' },
+			{ name: "sakura Aval:", value: "unavailable", inline: true }
+			//{ name: "KD-R", value: parseInt(Kills/Deaths), inline: true }
+		)
 		.setTimestamp()
 		.setFooter({ text: 'SakuraSystem 3.0 - apply' })
 		
