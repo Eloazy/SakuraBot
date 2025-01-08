@@ -72,9 +72,9 @@ async function embedMaker(interaction, name, whyJoin, kill, death, level) {
 		.setFooter({ text: 'SakuraSystem 3.0 - apply' })
 	
 	const approved = new ButtonBuilder()
-			.setCustomId('Approved')
+			.setCustomId('approved')
 			.setLabel('approve this apply')
-			.setStyle(ButtonStyle.Sucess);
+			.setStyle(ButtonStyle.Success);
 	
 	const denied = new ButtonBuilder()
 		.setCustomId('Denied')
@@ -89,5 +89,19 @@ async function embedMaker(interaction, name, whyJoin, kill, death, level) {
 	const row = new ActionRowBuilder()
 			.addComponents(approved, denied, blacklisted);
 
-		await interaction.guild.channels.cache.get("1326365936046968856").send({ embeds: [apply], components: [row] })
+	const response = await interaction.guild.channels.cache.get("1326365936046968856").send({ embeds: [apply], components: [row] })
+
+	const collectorFilter = i => i.user.id === interaction.user.id;
+	
+	try {
+		const button = await response.awaitMessageComponent({ filter: collectorFilter, time: 60_000 });
+		
+		if (button.customId === 'approved') {
+			await interaction.guild.channels.cache.get("1326365936046968856").send('apply approved');
+		} else if (confirmation.customId === 'denied') {
+			await response.update({ content: 'Action cancelled', components: [] })
+		}
+	} catch (e) {
+		await console.error(e)//interaction.editReply({ content: 'Confirmation not received within 1 minute, cancelling', components: [] });
+	}
 }
