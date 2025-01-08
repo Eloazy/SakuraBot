@@ -1,4 +1,4 @@
-const { ActionRowBuilder, ModalBuilder, TextInputBuilder, TextInputStyle } = require("discord.js")
+const { EmbedBuilder, ActionRowBuilder, ModalBuilder, TextInputBuilder, TextInputStyle } = require("discord.js")
 module.exports = async function(interaction) {
 
   const modal = new ModalBuilder()
@@ -42,25 +42,31 @@ module.exports = async function(interaction) {
 	const filter = (interaction) => interaction.customId === 'apply'
 
         interaction.awaitModalSubmit({ filter, time: 30_000 }).then((interaction) => {
-		embedMaker(interaction, firstActionRow, secondActionRow, tirthActionRow, fourthActionRow, fifthActionRow)
+		const name = interaction.fields.getTextInputValue('nameInput')
+		const whyJoin = interaction.fields.getTextInputValue('whyJoin')
+		const kill = interaction.fields.getTextInputValue('killInput')
+		const death = interaction.fields.getTextInputValue('deathInput')
+		const level = interaction.fields.getTextInputValue('levelInput')
+		
+		embedMaker(interaction, name, whyJoin, kill, death, level)
 		.then(response => {
 			interaction.reply({ content: 'apply submited', ephemeral: true })
 		})
 	})
 }      
 
-async function embedMaker(interaction, name, whyJoin, Kills, Deaths, Level) {
+async function embedMaker(interaction, name, whyJoin, kill, death, level) {
 	const apply = new EmbedBuilder()
 		.setColor("FFA6C9")
-		.setTitle(`<@${interaction.user.id}> apply`)
-		.setDescription('why join in lunar?\n'+interaction.fields.getTextInputValue('whyJoin'))
+		.setTitle(`<@${interaction.user.id}> | ${name} apply`)
+		.setDescription('why join in lunar?\n'+whyJoin)
 		.addFields(
-			{ name: "kills:", value: `${interaction.fields.getTextInputValue('killInput')}`, inline: true },
-			{ name: "Deaths:", value: interaction.fields.getTextInputValue('deathInput'), inline: true },
-			{ name: "Level:", valud: `${interaction.fields.getTextInputValue('levelInput')}`, inline: true },
+			{ name: "kills:", value: `${kill}`, inline: true },
+			{ name: "Deaths:", value: `${death}, inline: true },
+			{ name: "Level:", valud: `${level}`, inline: true },
 			{ name: '\u200B', value: '\u200B' },
 			{ name: "sakura Aval:", value: "unavailable", inline: true }
-			//{ name: "KD-R", value: parseInt(Kills/Deaths), inline: true }
+			{ name: "KD-R", value: "unavailable", inline: true }
 		)
 		.setTimestamp()
 		.setFooter({ text: 'SakuraSystem 3.0 - apply' })
