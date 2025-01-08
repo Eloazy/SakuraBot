@@ -53,11 +53,11 @@ async function embedMaker(interaction, name, whyJoin, Kills, Deaths, Level) {
 	const apply = new EmbedBuilder()
 		.setColor("FFA6C9")
 		.setTitle(`<@${interaction.user.id}> apply`)
-		.setDescription('why join in lunar?\n'+whyJoin)
+		.setDescription('why join in lunar?\n'+interaction.fields.getTextInputValue('whyJoin'))
 		.addFields(
-			{ name: "kills:", value: Kills, inline: true },
-			{ name: "Deaths:", value: Deaths, inline: true },
-			{ name: "Level:", valud: Level, inline: true },
+			{ name: "kills:", value: `${interaction.fields.getTextInputValue('killInput')}`, inline: true },
+			{ name: "Deaths:", value: interaction.fields.getTextInputValue('deathInput'), inline: true },
+			{ name: "Level:", valud: `${interaction.fields.getTextInputValue('levelInput')}`, inline: true },
 			{ name: '\u200B', value: '\u200B' },
 			{ name: "sakura Aval:", value: "unavailable", inline: true }
 			//{ name: "KD-R", value: parseInt(Kills/Deaths), inline: true }
