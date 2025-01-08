@@ -42,9 +42,9 @@ module.exports = async function(interaction) {
 	const filter = (interaction) => interaction.customId === 'apply'
 
         interaction.awaitModalSubmit({ filter, time: 30_000 }).then((interaction) => {
-		embedMaker(modalIteraction, firstActionRow, secondActionRow, tirthActionRow, fourthActionRow, fifthActionRow)
+		embedMaker(interaction, firstActionRow, secondActionRow, tirthActionRow, fourthActionRow, fifthActionRow)
 		.then(response => {
-			modalInteraction.reply({ content: 'apply submited', ephemeral: true })
+			interaction.reply({ content: 'apply submited', ephemeral: true })
 		})
 	})
 }      
