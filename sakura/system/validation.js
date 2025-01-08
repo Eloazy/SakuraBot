@@ -2,8 +2,6 @@ const notfound = require("../system/errors/notFound.js")
 const database = require("./ID_data.js")
 var db = null
 module.exports = async function(interaction) {
-	
-	if(interaction.user.id == "874115618746552330") {return 3}
 	try {
 		db = await database(interaction.guildId)
 		if(await database(interaction.guildId) == -1 || await database(interaction.guildId) == null) {return notfound(interaction)}
