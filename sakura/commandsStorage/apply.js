@@ -46,6 +46,7 @@ module.exports = async function(interaction) {
 		.then({
 			modalInteraction.reply({ content: 'apply submited', ephemeral: true })
 		})
+	})
 }      
 
 async function embedMaker(interaction, name, whyJoin, Kills, Deaths, Level) {
