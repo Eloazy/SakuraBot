@@ -81,11 +81,13 @@ async function embedMaker(interaction, name, whyJoin, kill, death, level) {
 		.setLabel('deny this apply')
 		.setStyle(ButtonStyle.Secondary);
 	
-	const blacklist = new ButtonBuilder()
+	const blacklisted = new ButtonBuilder()
 			.setCustomId('Blacklist')
 			.setLabel('blacklist this member')
 			.setStyle(ButtonStyle.Danger);
+	
+	const row = new ActionRowBuilder()
+			.addComponents(approved, denied, blacklisted);
 
-
-		await interaction.guild.channels.cache.get("1326365936046968856").send({ embeds: [apply] })
+		await interaction.guild.channels.cache.get("1326365936046968856").send({ embeds: [apply], components: [row] })
 }
