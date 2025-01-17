@@ -5,16 +5,15 @@ const TestFaction = {
 	StaffRoleID: "1316053060186804358"
 }
 const LunarFaction = {
-	Admins: ["874115618746552330", "761735210189586452"],
-	Staffs: ["1203497385699840000", "991963500903665695"],
+	AdminRoleID: "1250462649926549537",
+	StaffRoleID: "1263278405496078462",
 	ShiftID: "1269469503507664958",
-	StaffRoleID: "1263278405496078462"
+
 }
 const BlackCircle = {
-	Admins: ["1096248118141526158"],
-	Staffs: [],
+	AdminRoleID: "1316040473030426624",
+	StaffRoleID: "1315021341614932038",
 	ShiftID: "1315026963374669874",
-	StaffRoleID: "1315021341614932038"
 }
 
 module.exports = function(factionID) {
