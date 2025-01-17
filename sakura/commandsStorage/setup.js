@@ -18,11 +18,10 @@ module.exports = async function(interaction) {
 			.setTitle('Server-Informs')
 			.setDescription(`testing data from:\n${interaction.guild.name} / ${interaction.guild.id}`)
 			.addFields(
-				{ name: "Admins:", value: "<@"+data.Admins[0]+"> / <@"+data.Admins[1]+">", inline: true },
-				{ name: "Staffs", value: "<@"+data.Staffs[0]+"> / <@"+data.Staffs[1]+">", inline: true},
+				{ name: "AdminRole:", value: "<@&"+data.AdminRoleID">", inline: true },
+				{ name: "StaffRole", value: "<@&"+data.StaffRoleID+">", inline: true },
 				{ name: '\u200B', value: '\u200B' },
-				{ name: "ShiftThread", value: "<#"+data.ShiftID+">", inline: true },
-				{ name: "StaffRole", value: "<@&"+data.StaffRoleID+">", inline: true }
+				{ name: "ShiftThread", value: "<#"+data.ShiftID+">", inline: true }
 			)
 			.setImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ0qm0qoeBZYeOxmGtSrD-Xv_m9Fm6gwOO-g&s')
 			.setColor("FFA6C9")

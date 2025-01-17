@@ -3,31 +3,18 @@ const { REST, Routes } = require("discord.js")
 var botID=null
 var token=null
 
-// devmode switcher
-if(process.env.devmode=="true"){
-	botID=process.env.ID
-	token = process.env.token
-}
-else{
-	botID=process.env.SID
-	token = process.env.sakuratoken
-}
-
 const commands = [
 	{
 		name: 'ping',
 		description: 'test the bot responsive',
-		"contexts": [0,1,2]
 	},
 	{
 		name: 'setup',
 		description: 'Test the Sakura on this server',
-		"contexts": [0]
 	},
 	{
 		name: 'punish',
 		description: 'timeout a member',
-		"contexts": [0],
 		"options": [
 			{
 				"name": "user",
@@ -46,7 +33,6 @@ const commands = [
 	{
 		name: 'ban',
 		description: 'ban a member',
-		"contexts": [0],
 		"options": [
 			{
 				"name": "user",
@@ -59,7 +45,6 @@ const commands = [
 	{
 		name: 'new-member',
 		description: 'Register a new member',
-		"contexts": [0],
 		"options": [{
 			"name": "user",
 			"description": "register the player here",
@@ -70,12 +55,10 @@ const commands = [
 	{
 		name: 'shutdown',
 		description: 'turn off bot on all servers',
-		"contexts": [0,1,2]
 	},
 	{
 		name: 'annoucement',
 		description: 'make a embed annoucement personalized to wharever server',
-		"contexts": [0,1,2],
 		"options": [
 			{
 				"name":"title",
@@ -98,52 +81,8 @@ const commands = [
 		]
 	},
 	{
-		name: 'maninho',
-		description: ':3 uwu',
-		"contexts": [0,1,2]
-	},
-	{
 		name: 'invite',
 		description: 'send the invite link',
-		"contexts": [0,1,2]
-	},
-	{
-		name: 'start-shift',
-		description: 'start your shift here',
-		"contexts": [0],
-		"options": [
-			{
-				"name":"kills",
-				"description": "input your kills here",
-				"type":10,
-				"required":true
-			},
-			{
-				"name": "image",
-				"description": "send the image here",
-				"type":11,
-				"required":true
-			}
-		]
-	},
-	{
-		name: 'end-shift',
-		description: 'end your shift here',
-		"contexts": [0],
-		"options": [
-			{
-				"name":"kills",
-				"description": "input your kills here",
-				"type":10,
-				"required":true
-			},
-			{
-				"name": "image",
-				"description": "send the image here",
-				"type":11,
-				"required":true
-			}
-		]
 	},
 	{
 		name: 'apply',
@@ -151,12 +90,12 @@ const commands = [
 	}
 ]
 
-const rest = new REST({ version: '10' }).setToken(token);
+const rest = new REST({ version: '10' }).setToken(process.env.token);
 
 (async () => {
 	try {
 		await rest.put(
-			Routes.applicationCommands(botID),
+			Routes.applicationCommands("1267232655447953448"),
 			{ body: commands }
 		)
 	console.log('registered')
