@@ -2,7 +2,7 @@ const { ButtonBuilder, ButtonStyle, EmbedBuilder, ActionRowBuilder, ModalBuilder
 module.exports = async function(interaction) {
 
   const modal = new ModalBuilder()
-	.setCustomId('apply')
+	.setCustomId(interaction.user.id)
 	.setTitle('Lunar Apply')
 
 	const nameInput = new TextInputBuilder()
@@ -41,7 +41,7 @@ module.exports = async function(interaction) {
 	await interaction.showModal(modal);
 	const filter = (interaction) => interaction.customId === 'apply'
 
-        interaction.awaitModalSubmit({ filter, time: 30_000 }).then((interaction) => {
+    interaction.awaitModalSubmit({ filter, time: 30_000 }).then((interaction) => {
 		const name = interaction.fields.getTextInputValue('nameInput')
 		const whyJoin = interaction.fields.getTextInputValue('whyJoin')
 		const kill = interaction.fields.getTextInputValue('killInput')
@@ -70,27 +70,6 @@ async function embedMaker(interaction, name, whyJoin, kill, death, level) {
 		)
 		.setTimestamp()
 		.setFooter({ text: 'SakuraSystem 3.0 - apply' })
-	
-	const approved = new ButtonBuilder()
-		.setCustomId('approved')
-		.setLabel('approve this apply')
-		.setStyle(ButtonStyle.Success)
-		.setDisabled(true)
-	
-	const denied = new ButtonBuilder()
-		.setCustomId('Denied')
-		.setLabel('deny this apply')
-		.setStyle(ButtonStyle.Secondary)
-	        .setDisabled(true)
-	
-	const blacklisted = new ButtonBuilder()
-		.setCustomId('Blacklist')
-		.setLabel('blacklist this member')
-		.setStyle(ButtonStyle.Danger)
-		.setDisabled(true)
-	
-	const row = new ActionRowBuilder()
-		.addComponents(approved, denied, blacklisted);
 
 	await interaction.guild.channels.cache.get("1326365936046968856").send({ embeds: [apply], components: [row] })
 }

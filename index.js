@@ -1,11 +1,6 @@
 const { Client, GatewayIntentBits, Routes, PermissionsBitField } = require("discord.js")
 require("dotenv").config()
 const command_management = require("./sakura/command_management.js")
-var token = process.env.TOKEN
-
-// devmode switcher
-if(process.env.devmode == "true") {token = process.env.token}
-else{token = process.env.sakuratoken}
 
 const client = new Client({ 
 	intents: [
@@ -28,4 +23,4 @@ client.on("interactionCreate", async (interaction) => {
 	}
 })
 
-client.login(token)
+client.login(process.env.token)
