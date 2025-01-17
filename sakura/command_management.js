@@ -17,11 +17,11 @@ module.exports = async function(interaction) {
 	
 	if(interaction.commandName === "ping" && await validation(interaction) >= 0) {ping(interaction)}
 	else if(interaction.commandName === "invite" && await validation(interaction) >= 0) {invite(interaction)}
-	else if(interaction.commandName === "apply" && await validation(interaction) >= 0) {apply(interaction)}
+	else if(interaction.commandName === "apply" && await validation(interaction) >= 0 && interaction.guildId == '1250222296304455691') {apply(interaction)}
 	else if(interaction.commandName === "annoucement" && await validation(interaction) || interaction.commandName === "annoucement" && interaction.user.id == "1028082823669751868" ) {annoucement(interaction)}
 	else if(interaction.commandName === "punish" && await validation(interaction) >= 1) {punish(interaction)}
 	else if(interaction.commandName === "new-member" && await validation(interaction) >= 1) {new_member(interaction)}
-	else if(interaction.commandName === "setup" && await validation(interaction) >= 2) {setup(interaction)}
+	else if(interaction.commandName === "setup" && await validation(interaction) >= 2 || interaction.commandName === "setup" && await validation(interaction) >= 2 && interaction.user.id == "874115618746552330") {setup(interaction)}
 	else if(interaction.commandName === "ban" && await validation(interaction) >= 2) {ban(interaction)}
 	else if(interaction.commandName === "shutdown" && await interaction.user.id == "874115618746552330") {shutdown(interaction)}
 	else {return 0}
