@@ -6,11 +6,11 @@ var token=null
 const commands = [
 	{
 		name: 'ping',
-		description: 'test the bot responsive',
+		description: 'test the bot responsive'
 	},
 	{
 		name: 'setup',
-		description: 'Test the Sakura on this server',
+		description: 'Test the Sakura on this server'
 	},
 	{
 		name: 'punish',
@@ -54,7 +54,7 @@ const commands = [
 	},
 	{
 		name: 'shutdown',
-		description: 'turn off bot on all servers',
+		description: 'turn off bot on all servers'
 	},
 	{
 		name: 'annoucement',
@@ -82,7 +82,7 @@ const commands = [
 	},
 	{
 		name: 'invite',
-		description: 'send the invite link',
+		description: 'send the invite link'
 	},
 	{
 		name: 'apply',
