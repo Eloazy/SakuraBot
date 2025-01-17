@@ -9,7 +9,7 @@ module.exports = async function(interaction) {
 			.setTitle('Setup')
 			.setDescription(`Hello ${interaction.user}, I am sakura, if you have any doubts about how to use it, I recommend you join our development server.`)
 			.addFields(
-				{ name: "Developer Informs", value: "Dev: <@874115618746552330> | V:2.0.0 : O-UM : CD-F" },
+				{ name: "Developer Informs", value: "Dev: <@874115618746552330> | V:3.0.0 : Gold" },
 			)
 			.setThumbnail('https://media.tenor.com/iGKBLd0oaIgAAAAM/tomoyo-daidouji.gif')
 			.setColor("FFA6C9")
