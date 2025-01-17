@@ -18,7 +18,7 @@ module.exports = async function(interaction) {
 			.setTitle('Server-Informs')
 			.setDescription(`testing data from:\n${interaction.guild.name} / ${interaction.guild.id}`)
 			.addFields(
-				{ name: "AdminRole:", value: "<@&"+data.AdminRoleID">", inline: true },
+				{ name: "AdminRole:", value: "<@&"+data.AdminRoleID+">", inline: true },
 				{ name: "StaffRole", value: "<@&"+data.StaffRoleID+">", inline: true },
 				{ name: '\u200B', value: '\u200B' },
 				{ name: "ShiftThread", value: "<#"+data.ShiftID+">", inline: true }
